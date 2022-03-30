@@ -1,0 +1,5 @@
+arb-dir: lib/l10n
+output-class: TempcordLocalize
+output-localization-file: tempcord_localize.dart
+template-arb-file: tl_en.arb
+nullable-getter: false
