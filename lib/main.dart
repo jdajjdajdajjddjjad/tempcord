@@ -17,6 +17,9 @@ void main() async {
 
   // Hive binding
   await _hiveInit();
+
+  // Desktop adjust
+  _windowDisplayConfig();
 }
 
 Future<void> _sqlInit() async {

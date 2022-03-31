@@ -4,7 +4,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart' as path_provider;
 
-Database? _profileRecordDB = null;
+Database? _profileRecordDB;
 
 Future<String> get databaseDirPath => Platform.isAndroid || Platform.isIOS
     ? getDatabasesPath()
