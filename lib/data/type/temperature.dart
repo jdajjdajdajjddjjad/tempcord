@@ -1,9 +1,5 @@
-import 'dart:collection';
-
 import 'package:meta/meta.dart';
 import 'package:quiver/core.dart';
-
-part 'temperature_iterable.dart';
 
 const String _celsiusUnit = "\u{2103}", _fahrenheitUnit = "\u{2109}";
 
@@ -34,14 +30,13 @@ abstract class Temperature implements Comparable<Temperature> {
 
   String toStringAsReadable() => "${value.toStringAsFixed(1)}$unit";
 
-  @override
-  int get hashCode => hash2(value, unit);
-
-  int get _objectHash => super.hashCode;
+  bool sameTemperature(Temperature other) => compareTo(other) == 0;
 
   @override
-  bool operator ==(Object? other) =>
-      other is Temperature && compareTo(other) == 0;
+  int get hashCode => hash3(runtimeType, value, unit);
+
+  @override
+  bool operator ==(Object? other) => hashCode == other.hashCode;
 
   bool operator >(Temperature other) => compareTo(other) > 0;
 
