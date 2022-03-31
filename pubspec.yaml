@@ -31,6 +31,7 @@ dependencies:
   google_fonts: ^2.3.1
   url_launcher: ^6.0.20
   flutter_localized_locales: ^2.0.3
+  quiver: ^3.0.1+1
 dev_dependencies:
   flutter_test:
     sdk: flutter
