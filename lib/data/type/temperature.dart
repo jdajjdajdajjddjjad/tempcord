@@ -30,11 +30,16 @@ abstract class Temperature implements Comparable<Temperature> {
 
   String toStringAsReadable() => "${value.toStringAsFixed(1)}$unit";
 
+  /// Check [other] [Temperature] is repersenting same measurement's [value].
   bool sameTemperature(Temperature other) => compareTo(other) == 0;
 
   @override
   int get hashCode => hash3(runtimeType, value, unit);
 
+  /// Compare [other] has **exact** same data of [Temperature].
+  ///
+  /// Please uses [sameTemperature] for checking same [Temperature] that
+  /// required unit conversion.
   @override
   bool operator ==(Object? other) => hashCode == other.hashCode;
 
@@ -79,6 +84,7 @@ class Celsius extends Temperature {
   Celsius operator -(double subtracted) => Celsius(value - subtracted);
 }
 
+@sealed
 class Fahrenheit extends Temperature {
   Fahrenheit(double value) : super._(value);
 
