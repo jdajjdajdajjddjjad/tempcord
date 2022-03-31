@@ -8,6 +8,17 @@ abstract class Temperature implements Comparable<Temperature> {
 
   Temperature._(this.value) : assert(value.isFinite);
 
+  factory Temperature.parse({required double value, required String unit}) {
+    switch (unit) {
+      case _celsiusUnit:
+        return Celsius(value);
+      case _fahrenheitUnit:
+        return Fahrenheit(value);
+      default:
+        throw FormatException("Unknown unit symbol '$unit'");
+    }
+  }
+
   String get unit;
 
   Temperature _convertSameUnit(Temperature other);
