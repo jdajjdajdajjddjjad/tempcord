@@ -1,3 +1,6 @@
 [submodule "l10n"]
 	path = lib/l10n
 	url = https://github.com/rk0cc/tempcord_l10n.git
+[submodule "wiki"]
+	path = wiki
+	url = https://github.com/rk0cc/tempcord.wiki.git
