@@ -23,7 +23,7 @@ Future<Database> get profileRecordDB async {
     await db.execute("PRAGMA foreign_keys = ON");
   }, onCreate: (db, version) async {
     await db.execute(
-        "CREATE TABLE profiles (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, animal TEXT NOT NULL, image BLOB)");
+        "CREATE TABLE profiles (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, animal INTEGER NOT NULL, image BLOB)");
     await db.execute(
         "CREATE TABLE btr (id INTEGER PRIMARY KEY AUTOINCREMENT, pid INTEGER NOT NULL, temp REAL NOT NULL, unit TEXT NOT NULL, recordedAt TEXT NOT NULL, FOREIGN KEY (pid) REFERENCES profiles (id) ON UPDATE RESTRICT ON DELETE RESTRICT");
   });
